@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+    public FloatValue playerGold;
+    public SignalSender playerGoldSignal;
+
     void Start() {
         transform.position = startingPosition.initialValue;
     }
@@ -37,6 +40,14 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Vertical", movement.y);
         }
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+
+        // TEST GOLD SYSTEM
+        if(Input.GetKeyDown(KeyCode.G)) {
+            playerGold.initialValue += 50;
+            playerGoldSignal.Raise();
+            Debug.Log(playerGold.initialValue);
+        }
     }
 
     void FixedUpdate() 
