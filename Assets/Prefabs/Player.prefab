@@ -123,6 +123,8 @@ MonoBehaviour:
   rb: {fileID: 5314697691150668835}
   animator: {fileID: 5314697691150668834}
   startingPosition: {fileID: 11400000, guid: 4fcf5575d88ad37438b937b34e891dc7, type: 2}
+  playerGold: {fileID: 11400000, guid: 9f5b0d2899477af408e399ea0125c769, type: 2}
+  playerGoldSignal: {fileID: 11400000, guid: 0232d43b9b113484a9261f0737433b92, type: 2}
 --- !u!95 &5314697691150668834
 Animator:
   serializedVersion: 3
