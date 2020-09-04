@@ -1290,11 +1290,16 @@ PrefabInstance:
     - target: {fileID: 5461481270849564071, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
         type: 3}
       propertyPath: m_Text
-      value: Yup! This place looks like shit. Maybe I can do something about it.
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5461481270849564071, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
         type: 3}
       propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5461481270849564121, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5461481270901793704, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
@@ -1320,6 +1325,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 747420099}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &747420102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747420100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d0942c4957fcd4586de0cd15a08c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &769940052
 GameObject:
   m_ObjectHideFlags: 0
@@ -7527,6 +7544,39 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1789438859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5461481270849564121, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 747420099}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1789438861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789438859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6c730d4522511499e858cefa97b09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textHolder: {fileID: 1789438862}
+  input: Yup! This place looks like shit. Maybe I can do something about it.
+  delay: 0.05
+--- !u!114 &1789438862 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5461481270849564071, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 747420099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789438859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1936098294
 GameObject:
   m_ObjectHideFlags: 0

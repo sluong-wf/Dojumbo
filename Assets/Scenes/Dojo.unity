@@ -1213,7 +1213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &632529838
 Rigidbody2D:
   serializedVersion: 4
@@ -1365,8 +1365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogBox: {fileID: 1289177038}
-  dialogText: {fileID: 1328826817}
-  dialog: This is not the time.
+  dialogText: {fileID: 1207779249}
+  dialog: This is not the time. Maybe I need to get stronger first...
   playerInRange: 0
 --- !u!1 &806823392
 GameObject:
@@ -3189,19 +3189,52 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1207779246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5461481270849564121, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 5461481271905199206}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1207779249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207779246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6c730d4522511499e858cefa97b09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textHolder: {fileID: 1328826817}
+  input: 
+  delay: 0.01
 --- !u!1 &1289177038 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5461481270901793704, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
     type: 3}
   m_PrefabInstance: {fileID: 5461481271905199206}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1289177042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289177038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d0942c4957fcd4586de0cd15a08c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1328826817 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5461481270849564071, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
     type: 3}
   m_PrefabInstance: {fileID: 5461481271905199206}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1207779246}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -7761,6 +7794,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5461481270849564071, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5461481270849564121, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5461481270901793704, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0, type: 3}

@@ -6,25 +6,17 @@ using UnityEngine.UI;
 public class Sign : MonoBehaviour
 {
     public GameObject dialogBox;
-    public Text dialogText;
+    public Dialogue dialogText;
     public string dialog;
     public bool playerInRange;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) && playerInRange) {
-            if(dialogBox.activeInHierarchy) {
-                dialogBox.SetActive(false);
-            } else {
+            if(!dialogBox.activeInHierarchy) {
                 dialogBox.SetActive(true);
-                dialogText.text = dialog;
+                dialogText.input = dialog;
             }
         }
     }
