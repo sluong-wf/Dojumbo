@@ -4,29 +4,47 @@ using UnityEngine;
 
 public class DialogueHolder : MonoBehaviour
 {
-    private void Awake() {
-        StartCoroutine(dialogueSequence());
+    
+    public Dialogue dialogText;
+    public string[] sentences;
+    private int index = 0;
+    
+    void Start() {
+        index = 0;
+        // StartCoroutine(dialogueSequence());
+        DialogueSequence();
     }
 
-    private IEnumerator dialogueSequence() {
-        for (int i=0; i<transform.childCount; i++) {
-            Deactivate();
-            transform.GetChild(i).gameObject.SetActive(true);
-            yield return new WaitUntil(() => transform.GetChild(i).GetComponent<Dialogue>().finished);
-        }
+    void OnDisable() {
+        index = 0;
     }
 
-    private void Deactivate() {
-        for (int i=0; i<transform.childCount; i++) {
-            transform.GetChild(i).gameObject.SetActive(false);
-        }
+    private void DialogueSequence() {
+        dialogText.input = sentences[index];
+        dialogText.gameObject.SetActive(false);
+        dialogText.gameObject.SetActive(true);
     }
+
+    // private IEnumerator dialogueSequence() {
+    //     dialogText.gameObject.SetActive(false);
+    //     dialogText.gameObject.SetActive(true);
+    //     yield return new WaitUntil(() => dialogText.finished);
+    // }
 
     void Update() {
         if(Input.GetKeyDown(KeyCode.Space)) {
             // code here to display full sentence before closing
-
-            this.gameObject.SetActive(false);
+            if (dialogText.displayedCount < sentences[index].Length) {
+                dialogText.DisplayFull();
+            }
+            else {
+                index += 1;
+                if (index <= sentences.Length-1) {
+                    DialogueSequence();
+                } else {
+                    this.gameObject.SetActive(false);
+                }
+            }
         }
     }
 }

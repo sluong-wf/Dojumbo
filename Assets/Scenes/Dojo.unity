@@ -1366,7 +1366,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogBox: {fileID: 1289177038}
   dialogText: {fileID: 1207779249}
-  dialog: This is not the time. Maybe I need to get stronger first...
+  sentences:
+  - "Maybe I shouldn't try this.\t"
+  - I'm not strong enough yet... Testing
+  - Might hurt myself if I attempt it now.
   playerInRange: 0
 --- !u!1 &806823392
 GameObject:
@@ -3207,9 +3210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6c730d4522511499e858cefa97b09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayedCount: 0
   textHolder: {fileID: 1328826817}
   input: 
-  delay: 0.01
+  delay: 0.05
 --- !u!1 &1289177038 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5461481270901793704, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,
@@ -3228,6 +3232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d0942c4957fcd4586de0cd15a08c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogText: {fileID: 1207779249}
+  sentences: []
 --- !u!114 &1328826817 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5461481270849564071, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,

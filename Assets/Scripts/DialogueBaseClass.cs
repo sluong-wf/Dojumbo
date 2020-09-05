@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class DialogueBaseClass : MonoBehaviour
 {
-    public bool finished { get; private set; }
+    // public bool finished { get; private set; }
+    public int displayedCount;
 
     protected IEnumerator WriteText(string input, Text textHolder, float delay)
     {
@@ -13,9 +14,15 @@ public class DialogueBaseClass : MonoBehaviour
         {
             textHolder.text += input[i];
             yield return new WaitForSeconds(delay);
+            displayedCount = i;
         }
 
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
-        finished = true;
+        // yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        // finished = true;
+    }
+
+    protected void WriteFull(string input, Text textHolder) {
+        textHolder.text = input;
+        displayedCount = input.Length;
     }
 }

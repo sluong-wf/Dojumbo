@@ -7,7 +7,10 @@ public class Sign : MonoBehaviour
 {
     public GameObject dialogBox;
     public Dialogue dialogText;
-    public string dialog;
+
+    [TextArea(3, 10)]
+    public string[] sentences;
+
     public bool playerInRange;
     
     // Update is called once per frame
@@ -16,7 +19,7 @@ public class Sign : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && playerInRange) {
             if(!dialogBox.activeInHierarchy) {
                 dialogBox.SetActive(true);
-                dialogText.input = dialog;
+                dialogBox.GetComponent<DialogueHolder>().sentences = sentences;
             }
         }
     }
