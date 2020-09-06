@@ -1337,6 +1337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d0942c4957fcd4586de0cd15a08c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogText: {fileID: 1789438861}
 --- !u!1 &769940052
 GameObject:
   m_ObjectHideFlags: 0
@@ -7562,9 +7563,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6c730d4522511499e858cefa97b09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayedCount: 0
   textHolder: {fileID: 1789438862}
-  input: Yup! This place looks like shit. Maybe I can do something about it.
+  dialogueHolder: {fileID: 747420100}
+  sentences:
+  - Yep! This place looks like shit. Maybe I can do somthing about it.
   delay: 0.05
+  fullFinished: 0
 --- !u!114 &1789438862 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5461481270849564071, guid: a7ee7f8cd50f69148a9be7c5b6e5f6a0,

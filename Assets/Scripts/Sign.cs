@@ -19,7 +19,7 @@ public class Sign : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && playerInRange) {
             if(!dialogBox.activeInHierarchy) {
                 dialogBox.SetActive(true);
-                dialogBox.GetComponent<DialogueHolder>().sentences = sentences;
+                dialogText.sentences = sentences;
             }
         }
     }

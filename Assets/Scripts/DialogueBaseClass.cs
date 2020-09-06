@@ -4,11 +4,12 @@ using UnityEngine.UI;
 
 public class DialogueBaseClass : MonoBehaviour
 {
-    // public bool finished { get; private set; }
+    public bool finished { get; private set; } = false;
     public int displayedCount;
 
     protected IEnumerator WriteText(string input, Text textHolder, float delay)
     {
+        finished = false;
         textHolder.text = "";
         for (int i = 0; i < input.Length; i++)
         {
@@ -18,11 +19,12 @@ public class DialogueBaseClass : MonoBehaviour
         }
 
         // yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
-        // finished = true;
+        finished = true;
     }
 
     protected void WriteFull(string input, Text textHolder) {
         textHolder.text = input;
         displayedCount = input.Length;
+        finished = true;
     }
 }
