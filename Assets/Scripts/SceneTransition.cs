@@ -12,17 +12,21 @@ public class SceneTransition : MonoBehaviour
     public GameObject fadeOutPanel;
     public float fadeWait;
 
+    private PlayerMovement player;
+
     // called before Start
     void Awake() {
         if(fadeInPanel != null) {
             GameObject panel = Instantiate(fadeInPanel, Vector3.zero, Quaternion.identity) as GameObject;
             Destroy(panel, 1);
         }
+
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
     }
     
     public void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player") && !other.isTrigger) {
-            playerStorage.initialValue = playerPosition;
+            playerStorage.InitialValue = playerPosition;
             // SceneManager.LoadScene(sceneToLoad);
             StartCoroutine(FadeCo());
         }
@@ -30,6 +34,7 @@ public class SceneTransition : MonoBehaviour
 
     public IEnumerator FadeCo() { // Coroutine
         if(fadeOutPanel != null) {
+            player.currentState = PlayerState.interact;
             Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity);
         }
         yield return new WaitForSeconds(fadeWait);
@@ -37,5 +42,6 @@ public class SceneTransition : MonoBehaviour
         while(!asyncOperation.isDone) {
             yield return null;
         }
+        player.currentState = PlayerState.idle;
     }
 }

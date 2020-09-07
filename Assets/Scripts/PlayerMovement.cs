@@ -2,10 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerDirection {
+    Up,
+    Down,
+    Left,
+    Right
+}
+
+
 public enum PlayerState {
     walk,
     attack,
-    interact
+    interact,
+    idle
 }
 
 public class PlayerMovement : MonoBehaviour
@@ -13,17 +22,38 @@ public class PlayerMovement : MonoBehaviour
 
     public float moveSpeed = 3f;
 
-    public Rigidbody2D rb;
-    public Animator animator;
-    public VectorValue startingPosition;
+    public VectorValue startPosition;
 
-    Vector2 movement;
+    private Rigidbody2D rb;
+    private Animator anim;
 
+    private Vector2 movement;
+
+    public PlayerState currentState;
     public FloatValue playerGold;
     public SignalSender playerGoldSignal;
 
     void Start() {
-        transform.position = startingPosition.initialValue;
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        transform.position = startPosition.InitialValue;
+        
+        currentState = PlayerState.idle;
+
+        switch (startPosition.Facing) {
+            case PlayerDirection.Down:
+                anim.SetFloat("Vertical",-1);
+                break;
+            case PlayerDirection.Up:
+                anim.SetFloat("Vertical",1);
+                break;
+            case PlayerDirection.Left:
+                anim.SetFloat("Horizontal",-1);
+                break;
+            case PlayerDirection.Right:
+                anim.SetFloat("Horizontal",1);
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -35,11 +65,27 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
 
-        if (movement != Vector2.zero) {
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Vertical", movement.y);
+        if (currentState == PlayerState.idle) {
+            if (movement != Vector2.zero) {
+                anim.SetFloat("Horizontal", movement.x);
+                anim.SetFloat("Vertical", movement.y);
+
+                if(movement.x > 0) {
+                    startPosition.Facing = PlayerDirection.Right;
+                } else if (movement.x < 0) {
+                    startPosition.Facing = PlayerDirection.Left;
+                } else if (movement.y > 0) {
+                    startPosition.Facing = PlayerDirection.Up;
+                } else if (movement.y < 0) {
+                    startPosition.Facing = PlayerDirection.Down;
+                }
+            }
+            anim.SetFloat("Speed", movement.sqrMagnitude);
+
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        } else {
+            anim.SetFloat("Speed", 0);
         }
-        animator.SetFloat("Speed", movement.sqrMagnitude);
 
 
         // TEST GOLD SYSTEM
@@ -53,7 +99,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate() 
     {
         // Handle movement
-
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        // rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }

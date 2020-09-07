@@ -15,10 +15,13 @@ public class DialogueTrigger : Interactable
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && playerInRange) {
-            if(!dialogueBox.activeInHierarchy) {
+        if(!dialogueBox.activeInHierarchy) {
+            if(Input.GetKeyDown(KeyCode.Space) && playerInRange) {
                 dialogueBox.SetActive(true);
                 dialogueText.sentences = sentences;
+                EnableInactive();
+            } else {
+                DisableInactive();
             }
         }
     }

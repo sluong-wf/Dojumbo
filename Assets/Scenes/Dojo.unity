@@ -7450,6 +7450,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5314697691150668892, guid: b3205fee204994845b373a233aa068f6,
+        type: 3}
+      propertyPath: startPosition
+      value: 
+      objectReference: {fileID: 11400000, guid: 4fcf5575d88ad37438b937b34e891dc7,
+        type: 2}
+    - target: {fileID: 5314697691150668892, guid: b3205fee204994845b373a233aa068f6,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5314697691150668893, guid: b3205fee204994845b373a233aa068f6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7673,7 +7684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: World
-  playerPosition: {x: 0, y: 0}
+  playerPosition: {x: 0, y: 1}
   playerStorage: {fileID: 11400000, guid: 4fcf5575d88ad37438b937b34e891dc7, type: 2}
   fadeInPanel: {fileID: 2187367033090267019, guid: f56f67c290bdd894590bf78d7f352b0d,
     type: 3}
