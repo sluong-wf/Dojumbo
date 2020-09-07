@@ -1364,13 +1364,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0edd68bac27659944a10ce523130781d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogBox: {fileID: 1289177038}
-  dialogText: {fileID: 1207779249}
+  playerInRange: 0
+  dialogueBox: {fileID: 1289177038}
+  dialogueText: {fileID: 1207779249}
   sentences:
   - "Maybe I shouldn't try this.\t"
   - I'm not strong enough yet... Testing
   - Might hurt myself if I attempt it now.
-  playerInRange: 0
 --- !u!1 &806823392
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,7 +3213,7 @@ MonoBehaviour:
   displayedCount: 0
   textHolder: {fileID: 1328826817}
   dialogueHolder: {fileID: 1289177038}
-  input: 
+  sentences: []
   delay: 0.05
   fullFinished: 0
 --- !u!1 &1289177038 stripped
