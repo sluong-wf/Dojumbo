@@ -7671,7 +7671,13 @@ PrefabInstance:
         type: 3}
       propertyPath: playerGoldSignal
       value: 
-      objectReference: {fileID: 11400000, guid: 8eb2f7142fb214f42a3356cb367e4fef,
+      objectReference: {fileID: 11400000, guid: 0232d43b9b113484a9261f0737433b92,
+        type: 2}
+    - target: {fileID: 5314697691150668892, guid: b3205fee204994845b373a233aa068f6,
+        type: 3}
+      propertyPath: startPosition
+      value: 
+      objectReference: {fileID: 11400000, guid: 4fcf5575d88ad37438b937b34e891dc7,
         type: 2}
     - target: {fileID: 5314697691150668893, guid: b3205fee204994845b373a233aa068f6,
         type: 3}
