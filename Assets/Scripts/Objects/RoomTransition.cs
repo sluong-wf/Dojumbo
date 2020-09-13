@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class RoomTransition : MonoBehaviour
 {
-    public Vector2 playerPosition;
-    public VectorValue playerStorage;
+    [SerializeField] private GameObject player;
+    [SerializeField] private Vector2 moveToPosition;
+    
     public GameObject fadeInPanel;
     public GameObject fadeOutPanel;
     public float fadeWait;
@@ -13,28 +14,28 @@ public class RoomTransition : MonoBehaviour
     [SerializeField] private GameObject currCam;
     [SerializeField] private GameObject nextCam;
 
-    private PlayerMovement player;
+    [SerializeField] private PlayerMovement playerMovement;
 
     void Start() {
-        player = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
     }
     
     void OnEnable() {
-        playerStorage.InitialValue = playerPosition;
         StartCoroutine(FadeCo());
     }
 
     public IEnumerator FadeCo() {
-        currCam.SetActive(false);
-        nextCam.SetActive(true);
-
         if(fadeInPanel != null) {
-            player.currentState = PlayerState.interact;
+            playerMovement.currentState = PlayerState.interact;
             GameObject panel = Instantiate(fadeInPanel, Vector3.zero, Quaternion.identity) as GameObject;
             Destroy(panel, 1);
         }
+            
+        currCam.SetActive(false);
+        player.transform.position = moveToPosition;
+        nextCam.SetActive(true);
+
         yield return new WaitForSeconds(fadeWait);
         
-        player.currentState = PlayerState.idle;
+        playerMovement.currentState = PlayerState.idle;
     }
 }

@@ -525,6 +525,24 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &360520250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5314697691150668895, guid: b3205fee204994845b373a233aa068f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1654477636}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &360520253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5314697691150668892, guid: b3205fee204994845b373a233aa068f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1654477636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360520250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69617e1383d47364393fefcd05306e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &442230639 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5314697691150668893, guid: b3205fee204994845b373a233aa068f6,
@@ -795,7 +813,7 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
-    m_Style: 1
+    m_Style: 0
     m_Time: 2
     m_CustomCurve:
       serializedVersion: 2
@@ -1368,15 +1386,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51985c2c9d5960041903b97bee02743d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {x: -6, y: 12}
-  playerStorage: {fileID: 11400000, guid: 4fcf5575d88ad37438b937b34e891dc7, type: 2}
-  fadeInPanel: {fileID: 2187367033090267019, guid: f56f67c290bdd894590bf78d7f352b0d,
+  player: {fileID: 360520250}
+  moveToPosition: {x: -6, y: 12}
+  fadeInPanel: {fileID: 7316271740278247995, guid: cea7217081e46894d8dfa7d02821d893,
     type: 3}
   fadeOutPanel: {fileID: 4920453086843077827, guid: cb168a2e7b5cdb444994f63703b843cb,
     type: 3}
-  fadeWait: 0.33
+  fadeWait: 0.66
   currCam: {fileID: 1356706684}
   nextCam: {fileID: 1780422919}
+  playerMovement: {fileID: 360520253}
 --- !u!4 &701918545
 Transform:
   m_ObjectHideFlags: 0
@@ -3173,7 +3192,17 @@ PrefabInstance:
     - target: {fileID: 2384309839220618929, guid: af184fd0fb7cae748aef61b021ebc789,
         type: 3}
       propertyPath: m_ZDamping
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2384309839220618929, guid: af184fd0fb7cae748aef61b021ebc789,
+        type: 3}
+      propertyPath: m_XDamping
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2384309839220618929, guid: af184fd0fb7cae748aef61b021ebc789,
+        type: 3}
+      propertyPath: m_YDamping
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7376893059029942452, guid: af184fd0fb7cae748aef61b021ebc789,
         type: 3}
@@ -7815,6 +7844,16 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 442230639}
+    - target: {fileID: 2384309839220618929, guid: af184fd0fb7cae748aef61b021ebc789,
+        type: 3}
+      propertyPath: m_XDamping
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2384309839220618929, guid: af184fd0fb7cae748aef61b021ebc789,
+        type: 3}
+      propertyPath: m_YDamping
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 7376893059029942452, guid: af184fd0fb7cae748aef61b021ebc789,
         type: 3}
       propertyPath: m_LocalPosition.x
