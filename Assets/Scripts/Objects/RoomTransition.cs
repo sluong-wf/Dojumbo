@@ -29,12 +29,14 @@ public class RoomTransition : MonoBehaviour
             GameObject panel = Instantiate(fadeInPanel, Vector3.zero, Quaternion.identity) as GameObject;
             Destroy(panel, 1);
         }
+        
+        yield return new WaitForSeconds(fadeWait/2);
             
         currCam.SetActive(false);
         player.transform.position = moveToPosition;
         nextCam.SetActive(true);
 
-        yield return new WaitForSeconds(fadeWait);
+        yield return new WaitForSeconds(fadeWait/2);
         
         playerMovement.currentState = PlayerState.idle;
     }
