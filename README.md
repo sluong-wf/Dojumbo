@@ -5,12 +5,12 @@ A simulation role-playing game inspired by the Karate martial art and Stardew Va
 [feeble specs](https://docs.google.com/document/d/1kad4ooyZrvR2SZwIvPR1mPnIEqmeU5fdMZGYoK9nKcQ/edit?usp=sharing) of this game
 
 <p align="left">
-    <img width="300" src="Screenshots/screen1.png"> &emsp;
-    <img width="300" src="Screenshots/screen2.png">
+    <img width="300" src="Screenshots/screen1.PNG"> &emsp;
+    <img width="300" src="Screenshots/screen2.PNG">
 </p>
 <p align="left">
-    <img width="300" src="Screenshots/screen3.png"> &emsp;
-    <img width="300" src="Screenshots/screen4.png">
+    <img width="300" src="Screenshots/screen3.PNG"> &emsp;
+    <img width="300" src="Screenshots/screen4.PNG">
 </p>
 
 All artwork are original.
